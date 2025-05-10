@@ -35,8 +35,4 @@ public class Movie {
     public void addScreening(Screening screening) {
         this.screenings.add(screening);
     }
-
-    public void removeScreening(Screening screening) {
-        this.screenings.remove(screening);
-    }
 }

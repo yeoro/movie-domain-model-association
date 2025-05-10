@@ -28,19 +28,7 @@ public class Screening {
         this.sequence = sequence;
         this.screeningTime = screeningTime;
     }
-
-    public void changeMovie(Movie movie) {
-        if (this.movie != null) {
-            this.movie.removeScreening(this);
-        }
-
-        this.movie = movie;
-        this.movie.addScreening(this);
-    }
-
     public Money getFixedFee() {
         return movie.getFee();
     }
-
-
 }
