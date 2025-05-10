@@ -28,6 +28,6 @@ public class JpaAssociationTest {
 
 		Screening loadedScreening = em.find(Screening.class, screening.getId());
 
-		assertThat(loadedScreening.getFixedFee()).isEqualTo(Money.wons(10000));
+		assertThat(loadedScreening.getMovie().getTitle()).isEqualTo("한산");
 	}
 }
