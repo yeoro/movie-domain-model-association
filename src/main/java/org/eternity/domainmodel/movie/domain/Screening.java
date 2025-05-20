@@ -19,7 +19,7 @@ public class Screening {
     private LocalDateTime screeningTime;
 
     @ManyToOne
-    @JoinColumn(name= "MOVIE_IE")
+    @JoinColumn(name= "MOVIE_ID")
     private Movie movie;
 
     public Screening(Movie movie, int sequence, LocalDateTime screeningTime) {
@@ -28,6 +28,16 @@ public class Screening {
         this.sequence = sequence;
         this.screeningTime = screeningTime;
     }
+
+    public void changeMovie(Movie movie) {
+        if(this.movie != null) {
+            this.movie.removeScreening(this);
+        }
+
+        this.movie = movie;
+        this.movie.addScreening(this);
+    }
+
     public Money getFixedFee() {
         return movie.getFee();
     }
